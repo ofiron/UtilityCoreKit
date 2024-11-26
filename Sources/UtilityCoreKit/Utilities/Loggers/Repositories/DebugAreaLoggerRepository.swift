@@ -14,8 +14,16 @@ public struct DebugAreaLoggerRepository {
 }
 
 extension DebugAreaLoggerRepository: Logger {
+    public func logWarning(_ message: String) {
+        print("📝⚠️ \(message)")
+    }
+
     public func logError(_ message: String) {
         print("📝🚨⚠️❌ \(message)")
+    }
+
+    public func logError(_ message: String, error: Error) {
+        print("📝🚨⚠️❌ \(message). error: \(error)")
     }
 
     public func logEvent(_ event: String) {

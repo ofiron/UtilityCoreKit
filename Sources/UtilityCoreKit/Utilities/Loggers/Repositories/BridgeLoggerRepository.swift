@@ -25,8 +25,16 @@ extension BridgeLoggerRepository: Logger {
         onLog?(message)
     }
 
+    public func logWarning(_ message: String) {
+        onLog?(message)
+    }
+
     public func logError(_ message: String) {
         onLog?(message)
+    }
+
+    public func logError(_ message: String, error: Error) {
+        onLog?(message + " error: \(error)")
     }
 
     public func logEvent(_ event: String) {

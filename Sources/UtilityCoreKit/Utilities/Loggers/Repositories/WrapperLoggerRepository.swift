@@ -21,8 +21,16 @@ public class WrapperLoggerRepository {
 }
 
 extension WrapperLoggerRepository: Logger {
+    public func logWarning(_ message: String) {
+        delegate?.logWarning(message)
+    }
+
     public func logError(_ message: String) {
         delegate?.logError(message)
+    }
+
+    public func logError(_ message: String, error: Error) {
+        delegate?.logError(message, error: error)
     }
 
     public func logEvent(_ event: String) {

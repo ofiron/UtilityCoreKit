@@ -21,12 +21,19 @@ public protocol Logger {
 /*
     /// Similar to info, but might indicate slightly more noteworthy events or conditions.
     func logNotice(_ message: String)
-
+*/
     /// Used for potential issues that could lead to problems but haven't caused any failures yet.
     func logWarning(_ message: String)
-*/
+
     /// Used for errors that have occurred but haven't caused the program to crash.
     func logError(_ message: String)
+
+    /// Logs an error message with an associated error object.
+    ///
+    /// - Parameters:
+    ///     - message: The error message.
+    ///     - error: The error object.
+    func logError(_ message: String, error: Error)
 /*
     /// Used for critical errors that have caused the program to crash or become unusable.
     func logFault(_ message: String)

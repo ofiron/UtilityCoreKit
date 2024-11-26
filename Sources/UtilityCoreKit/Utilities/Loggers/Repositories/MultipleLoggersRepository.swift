@@ -25,8 +25,16 @@ extension MultipleLoggersRepository: Logger {
         loggers.forEach { $0.logInfo(message) }
     }
 
+    public func logWarning(_ message: String) {
+        loggers.forEach { $0.logWarning(message) }
+    }
+
     public func logError(_ message: String) {
         loggers.forEach { $0.logError(message) }
+    }
+
+    public func logError(_ message: String, error: Error) {
+        loggers.forEach { $0.logError(message, error: error) }
     }
 
     public func logEvent(_ event: String) {
