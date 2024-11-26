@@ -7,9 +7,14 @@
 
 import Foundation
 
+/// A logger that forwards log messages to multiple underlying loggers.
 public struct MultipleLoggersRepository {
+    /// The underlying loggers to which messages are forwarded.
     let loggers: [Logger]
 
+    /// Initializes a new `MultipleLoggersRepository` with the given loggers.
+    ///
+    /// - Parameter loggers: An array of loggers to which messages will be forwarded.
     public init(loggers: [Logger]) {
         self.loggers = loggers
     }

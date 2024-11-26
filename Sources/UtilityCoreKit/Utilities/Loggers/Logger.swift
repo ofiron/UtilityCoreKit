@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A protocol defining the basic logging functionality.
 public protocol Logger {
 /*
     /// The most detailed level, used for very low-level debugging information. It's generally not enabled in production builds due to the high volume of messages.
@@ -38,6 +39,7 @@ public protocol Logger {
     func logDev(_ string: String)
 }
 
+/// Represents different log levels.
 public enum LoggerLevel: Int {
     case event
 /*

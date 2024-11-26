@@ -7,5 +7,6 @@
 
 import Foundation
 
+/// A protocol that defines a logging class with additional requirements.
 public protocol LoggerClass: AnyObject, Logger {
 }

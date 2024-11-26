@@ -7,10 +7,14 @@
 
 import Foundation
 
-/// Wrapper to pass logger.
+/// A wrapper for a logger that forwards log messages to a delegate.
 public class WrapperLoggerRepository {
-    weak var delegate: LoggerClass?
+    /// A weak reference to the delegate logger.
+    public weak var delegate: LoggerClass?
 
+    /// Initializes a new instance of the `WrapperLoggerRepository`.
+    ///
+    /// - Parameter delegate: The delegate logger to forward log messages to.
     public init(delegate: LoggerClass? = nil) {
         self.delegate = delegate
     }

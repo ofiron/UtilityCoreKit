@@ -7,7 +7,9 @@
 
 import Foundation
 
+/// A logger that prints logs to the console with specific formatting.
 public struct DebugAreaLoggerRepository {
+    /// Initializes a new instance of `DebugAreaLoggerRepository`.
     public init() {}
 }
 

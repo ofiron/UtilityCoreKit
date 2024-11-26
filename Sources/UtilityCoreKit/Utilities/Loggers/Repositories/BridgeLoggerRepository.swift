@@ -7,9 +7,14 @@
 
 import Foundation
 
+/// A logger that forwards log messages to a custom callback.
 public struct BridgeLoggerRepository {
+    /// A closure to handle log messages.
     var onLog: ((String) -> Void)?
 
+    /// Initializes a new `BridgeLoggerRepository` instance.
+    ///
+    /// - Parameter onLog: A closure to handle log messages.
     public  init(onLog: ( (String) -> Void)? = nil) {
         self.onLog = onLog
     }
