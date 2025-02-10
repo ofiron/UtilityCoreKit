@@ -19,9 +19,9 @@ struct ContentView: View {
             Text("Hello, world!")
 
             Button("Some action from package") {
-                let dateTimeComponents = try! Date.now.dateAndTimeComponents
-
-                textFromPackage = "\(dateTimeComponents.year).\(dateTimeComponents.month).\(dateTimeComponents.day) : \(dateTimeComponents.hour):\(dateTimeComponents.minute):\(dateTimeComponents.second)"
+                let logger: Logger = DebugAreaLoggerRepository()
+                logger.log(.info, "The log message")
+                textFromPackage = "See console for log"
             }
 
             Text("The time from package")

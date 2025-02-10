@@ -1,0 +1,15 @@
+{
+  "originHash" : "f2efb8761c812d1c361023e37aa89207294f1a836c06cac32359bfc73a573155",
+  "pins" : [
+    {
+      "identity" : "foundationcorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ofiron/FoundationCoreKit",
+      "state" : {
+        "revision" : "af034e4aa0f9a07ce8fec358237f691158ad2aa2",
+        "version" : "0.0.3"
+      }
+    }
+  ],
+  "version" : 3
+}
