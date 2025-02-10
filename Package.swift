@@ -12,11 +12,22 @@ let package = Package(
             name: "UtilityCoreKit",
             targets: ["UtilityCoreKit"]),
     ],
+    dependencies: [
+//        .package(path: "../FoundationCoreKit") // Local path for development
+        // For remote packages, use:
+        // .package(url: "https://url", from: "1.0.0")
+//            .pack
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", from: "0.0.1")
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "master")
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.1")
+        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UtilityCoreKit"),
+            name: "UtilityCoreKit",
+            dependencies: ["FoundationCoreKit"]),
         .testTarget(
             name: "UtilityCoreKitTests",
             dependencies: ["UtilityCoreKit"]),

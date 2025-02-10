@@ -17,7 +17,7 @@ extension Utils {
     /// Executes a closure on the main thread.
     ///
     /// - Parameter closure: The closure to execute on the main thread.
-    public static func mainThread(_ closure: @escaping () -> Void) {
+    public static func mainThread(_ closure: @escaping @Sendable () -> Void) {
         guard !Thread.isMainThread else {
           closure()
           return
