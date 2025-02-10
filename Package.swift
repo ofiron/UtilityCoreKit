@@ -19,8 +19,8 @@ let package = Package(
 //            .pack
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", from: "0.0.1")
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "master")
-//        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.1")
-        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev")
+        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.2")
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
