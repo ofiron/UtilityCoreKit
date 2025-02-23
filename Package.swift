@@ -19,7 +19,8 @@ let package = Package(
 //            .pack
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", from: "0.0.1")
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "master")
-        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.3")
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.3")
+        .package(url: "https://github.com/ofiron/FoundationCoreKit", .upToNextMinor(from: "0.0.3")),
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev")
     ],
     targets: [
