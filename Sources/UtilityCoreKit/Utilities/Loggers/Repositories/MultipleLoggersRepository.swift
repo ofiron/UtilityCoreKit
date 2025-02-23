@@ -21,6 +21,18 @@ public struct MultipleLoggersRepository {
 }
 
 extension MultipleLoggersRepository: Logger {
+    public func logTrace(_ message: String) {
+        loggers.forEach { $0.logTrace(message) }
+    }
+    
+    public func logDebug(_ message: String) {
+        loggers.forEach { $0.logDebug(message) }
+    }
+
+    public func logNotice(_ message: String) {
+        loggers.forEach { $0.logNotice(message) }
+    }
+
     public func logInfo(_ message: String) {
         loggers.forEach { $0.logInfo(message) }
     }
@@ -37,15 +49,15 @@ extension MultipleLoggersRepository: Logger {
         loggers.forEach { $0.logError(message, error: error) }
     }
 
-    public func logEvent(_ event: String) {
-        loggers.forEach { $0.logEvent(event) }
+    public func logFault(_ message: String) {
+        loggers.forEach { $0.logFault(message) }
     }
 
     public func log(_ level: LoggerLevel, _ message: String) {
         loggers.forEach { $0.log(level, message) }
     }
 
-    public func logDev(_ string: String) {
-        loggers.forEach { $0.logDev(string) }
+    public func logDev(_ message: String) {
+        loggers.forEach { $0.logDev(message) }
     }
 }

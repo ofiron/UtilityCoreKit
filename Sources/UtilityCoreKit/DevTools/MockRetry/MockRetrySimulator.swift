@@ -12,7 +12,7 @@ public final class MockRetrySimulator {
     /// Controls whether mock errors should be thrown
     public var isEnabled: Bool {
         didSet {
-            print("Retry Simulator: \(isEnabled ? "Enabled" : "Disabled")")
+            logger?.logInfo("Retry Simulator: \(isEnabled ? "Enabled" : "Disabled")")
         }
     }
     
@@ -23,12 +23,14 @@ public final class MockRetrySimulator {
                 fatalError("MockRetrySimulator: requiredFailures must be ≥ 0")
             }
             attemptCounts.removeAll()
-            print("Retry Simulator: Required failures updated to \(requiredFailures)")
+            logger?.logInfo("Retry Simulator: Required failures updated to \(requiredFailures)")
         }
     }
     
     private let lock = NSLock()
     private var attemptCounts = [String: Int]()
+    
+    private let logger: Logger?
     
     /// Creates a new retry simulator with configuration
     /// - Parameters:
@@ -36,7 +38,8 @@ public final class MockRetrySimulator {
     ///   - isEnabled: Whether simulator is active initially
     public init(
         requiredFailures: Int = 3,
-        isEnabled: Bool = true
+        isEnabled: Bool = true,
+        logger: Logger? = DebugAreaLoggerRepository()
     ) {
         guard requiredFailures >= 0 else {
             fatalError("MockRetrySimulator: requiredFailures must be ≥ 0")
@@ -44,6 +47,7 @@ public final class MockRetrySimulator {
         
         self.requiredFailures = requiredFailures
         self.isEnabled = isEnabled
+        self.logger = logger
     }
 
     /// Simulates retry pattern for a specific API endpoint
@@ -59,7 +63,7 @@ public final class MockRetrySimulator {
         let cycleLength = requiredFailures + 1
         
         if count % cycleLength == 0 {
-            print("Retry Simulator: Success cycle for \(identifier)")
+            logger?.logDebug("Retry Simulator: Success cycle for \(identifier)")
             attemptCounts[identifier] = 0  // Reset counter
             return
         }
@@ -68,7 +72,7 @@ public final class MockRetrySimulator {
             message: "\(identifier) failure (\(count % cycleLength)/\(requiredFailures))"
         )
 
-        print("Retry Simulator: \(error.description)")
+        logger?.logError("Retry Simulator: \(error.description)")
         throw error
     }
 

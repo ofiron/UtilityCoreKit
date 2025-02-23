@@ -21,10 +21,22 @@ public struct BridgeLoggerRepository {
 }
 
 extension BridgeLoggerRepository: Logger {
+    public func logTrace(_ message: String) {
+        onLog?(message)
+    }
+    
+    public func logDebug(_ message: String) {
+        onLog?(message)
+    }
+    
     public func logInfo(_ message: String) {
         onLog?(message)
     }
 
+    public func logNotice(_ message: String) {
+        onLog?(message)
+    }
+    
     public func logWarning(_ message: String) {
         onLog?(message)
     }
@@ -37,15 +49,15 @@ extension BridgeLoggerRepository: Logger {
         onLog?(message + " error: \(error)")
     }
 
-    public func logEvent(_ event: String) {
-        onLog?(event)
+    public func logFault(_ message: String) {
+        onLog?(message)
     }
 
     public func log(_ level: LoggerLevel, _ message: String) {
         onLog?(message)
     }
 
-    public func logDev(_ string: String) {
-        onLog?(string)
+    public func logDev(_ message: String) {
+        onLog?(message)
     }
 }
