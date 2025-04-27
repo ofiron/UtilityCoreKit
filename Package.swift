@@ -22,6 +22,7 @@ let package = Package(
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.3")
         .package(url: "https://github.com/ofiron/FoundationCoreKit", .upToNextMinor(from: "0.0.3")),
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev")
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "additions")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
