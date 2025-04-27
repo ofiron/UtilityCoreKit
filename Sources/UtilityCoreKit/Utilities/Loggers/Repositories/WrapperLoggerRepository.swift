@@ -60,4 +60,8 @@ extension WrapperLoggerRepository: Logger {
     public func logDev(_ string: String) {
         delegate?.logDev(string)
     }
+    
+    public func logPreview(_ string: String) {
+        delegate?.logPreview(string)
+    }
 }

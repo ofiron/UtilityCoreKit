@@ -81,4 +81,9 @@ extension DebugAreaLoggerRepository: Logger {
     public func logDev(_ message: String) {
         print("📝🛠️⚙️ \(message)")
     }
+    
+    public func logPreview(_ message: String) {
+        // Need to add print with emoji
+        print("👀📸 [Preview] $$message)")
+    }
 }

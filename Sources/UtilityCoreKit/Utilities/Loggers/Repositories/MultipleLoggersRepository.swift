@@ -60,4 +60,8 @@ extension MultipleLoggersRepository: Logger {
     public func logDev(_ message: String) {
         loggers.forEach { $0.logDev(message) }
     }
+    
+    public func logPreview(_ message: String) {
+        loggers.forEach { $0.logPreview(message) }
+    }
 }

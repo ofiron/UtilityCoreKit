@@ -42,12 +42,23 @@ public protocol Logger {
     /// Used for critical errors that have caused the program to crash or become unusable.
     func logFault(_ message: String)
 
+    /// Logs a message at the specified log level.
+    ///
+    /// - Parameters:
+    ///   - level: The severity level of the log message, defined by `LoggerLevel`.
+    ///   - message: The message to log.
     func log(_ level: LoggerLevel, _ message: String)
 
     /// Logs temporary, developer-specific messages during feature development or debugging.
+    ///
     /// - Parameter message: The message to log.
     /// - Warning: This is for temporary use only. Replace with an appropriate log level (e.g., `logDebug`, `logInfo`) or remove before merging to production.
     func logDev(_ message: String)
+    
+    /// Logs a preview message, typically used to display upcoming features or experimental information.
+    ///
+    /// - Parameter message: The message to log.
+    func logPreview(_ message: String)
 }
 
 /// Represents different log levels.

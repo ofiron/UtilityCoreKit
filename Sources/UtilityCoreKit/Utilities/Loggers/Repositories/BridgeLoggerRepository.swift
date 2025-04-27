@@ -60,4 +60,8 @@ extension BridgeLoggerRepository: Logger {
     public func logDev(_ message: String) {
         onLog?(message)
     }
+    
+    public func logPreview(_ message: String) {
+        onLog?(message)
+    }
 }
